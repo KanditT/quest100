@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'quests/edit', type: :view do
+RSpec.describe 'quests/edit' do
   let(:quest) do
     Quest.create!(
       name: 'MyString',

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe QuestsController, type: :routing do
+RSpec.describe QuestsController do
   describe 'routing' do
     it 'routes to #index' do
       expect(get: '/quests').to route_to('quests#index')

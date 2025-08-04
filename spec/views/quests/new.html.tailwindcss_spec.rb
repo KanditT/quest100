@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'quests/new', type: :view do
+RSpec.describe 'quests/new' do
   before do
     assign(:quest, Quest.new(
                      name: 'MyString',

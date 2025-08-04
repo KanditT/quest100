@@ -41,6 +41,11 @@ gem 'kamal', require: false
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem 'thruster', require: false
 
+gem 'rubocop', require: false
+gem 'rubocop-performance', require: false
+gem 'rubocop-rails', require: false
+gem 'rubocop-rspec', require: false # if using
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -59,9 +64,8 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner-active_record'
 
-  gem 'rubocop-performance', require: false # Performance best practices
-  gem 'rubocop-rails', require: false # Rails-specific cops
-  gem 'rubocop-rspec', require: false # For RSpec test style
+  gem 'rubocop-capybara', require: false
+  gem 'rubocop-rspec_rails', require: false
   gem 'simplecov'
 end
 

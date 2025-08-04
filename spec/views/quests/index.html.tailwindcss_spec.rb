@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'quests/index', type: :view do
+RSpec.describe 'quests/index' do
   before do
     assign(:quests, [
              Quest.create!(

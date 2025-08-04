@@ -1,17 +1,23 @@
-require:
+plugins:
     - rubocop-rails
     - rubocop-performance
     - rubocop-rspec
+    - rubocop-capybara
+    - rubocop-rspec_rails
 
 AllCops:
     TargetRubyVersion: 3.2
     NewCops: enable
+    SuggestExtensions: false
     Exclude:
         - "db/schema.rb"
-        - "node_modules/**/*"
         - "bin/*"
-        - "config/**/*"
+        - "node_modules/**/*"
         - "vendor/**/*"
 
-Layout/LineLength:
-    Max: 120
+Style/Documentation:
+    Enabled: false
+
+Metrics/BlockLength:
+    Exclude:
+        - "db/queue_schema.rb"
