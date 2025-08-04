@@ -10,7 +10,7 @@ RSpec.describe 'quests/show' do
                    ))
   end
 
-  it 'renders attributes in <p>' do
+  it 'renders attributes in <p>' do # rubocop:disable RSpec/MultipleExpectations
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/false/)
