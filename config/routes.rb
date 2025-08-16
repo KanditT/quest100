@@ -16,4 +16,6 @@ Rails.application.routes.draw do
     end
   end
   root 'quests#index'
+
+  get '/brag', to: 'brag#index', as: :brag
 end
