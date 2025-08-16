@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # features/step_definitions/quest_steps.rb
 
 Given('I am on the quests page') do
