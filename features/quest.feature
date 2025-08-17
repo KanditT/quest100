@@ -39,17 +39,19 @@ Scenario: Create a new quest successfully
 
   Scenario: Create multiple quests
     When I create a quest with name "Learn JavaScript"
-    And I create a quest with name "Master CSS"
+    And I create a quest with name "Learn CSS"
     And I create a quest with name "Build a Portfolio"
+    Then I wait a bit
     Then I should see "Learn JavaScript" in the quests list
-    And I should see "Master CSS" in the quests list
+    And I should see "Learn CSS" in the quests list
     And I should see "Build a Portfolio" in the quests list
+    Then I wait a bit
     When I toggle the status of quest "Learn JavaScript"
-    And I toggle the status of quest "Master CSS"
+    And I toggle the status of quest "Learn CSS"
     And I toggle the status of quest "Build a Portfolio"
     And I toggle the status of quest "Learn JavaScript"
     Then I wait a bit
-    And the quest "Master CSS" should have a completed status
+    And the quest "Learn CSS" should have a completed status
     And the quest "Build a Portfolio" should have a completed status
     And the quest "Learn JavaScript" should have an incomplete status
 

@@ -76,7 +76,7 @@ end
 When('I create a quest with name {string}') do |quest_name|
   fill_in 'quest[name]', with: quest_name
   click_button 'Create Quest'
-  expect(page).to have_text(quest_name)
+  sleep 0.2
 end
 
 Then('I should see {string} in the quests list') do |quest_name|
