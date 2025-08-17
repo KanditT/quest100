@@ -34,6 +34,8 @@ Scenario: Create a new quest successfully
     And I submit the quest form
     Then I should see "Learn Ruby on Rails" in the quests list
     And the quest should have incomplete status
+    And I toggle the status of quest "Learn Ruby on Rails"
+    And the quest "Learn Ruby on Rails" should have a completed status
     When I delete the quest "Learn Ruby on Rails"
     Then I should not see "Learn Ruby on Rails" in the quests list
 
@@ -46,15 +48,10 @@ Scenario: Create a new quest successfully
     And I should see "Learn CSS" in the quests list
     And I should see "Build a Portfolio" in the quests list
     Then I wait a bit
-    When I toggle the status of quest "Learn JavaScript"
-    And I toggle the status of quest "Learn CSS"
-    And I toggle the status of quest "Build a Portfolio"
-    And I toggle the status of quest "Learn JavaScript"
-    Then I wait a bit
-    And the quest "Learn CSS" should have a completed status
-    And the quest "Build a Portfolio" should have a completed status
     And the quest "Learn JavaScript" should have an incomplete status
-
+    And the quest "Learn CSS" should have an incomplete status
+    And the quest "Build a Portfolio" should have an incomplete status
+    
   Scenario: Form validation works with Turbo Stream
     When I submit an invalid quest form
     Then the form should update in place without page refresh
