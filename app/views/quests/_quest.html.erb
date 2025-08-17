@@ -16,9 +16,9 @@
                    data-testid="ascas"
                    >
         <% end %>
-        <span data-testid="quest-name-<%= quest.id %>" class="<%= quest.status ? 'line-through text-gray-500' : 'text-gray-900' %> font-medium ml-3">
+        <div data-testid="quest-name-<%= quest.id %>" class="<%= quest.status ? 'line-through text-gray-500' : 'text-gray-900' %> font-medium ml-3 break-all">
           <%= quest.name %>
-        </span>
+        </div>
       </div>
       <div class="flex items-center space-x-2">
         <%= link_to quest_path(quest), 

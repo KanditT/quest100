@@ -24,16 +24,16 @@
     </div>
   </div>
   <!-- Form to create new quest -->
-  <div class="bg-white shadow-md rounded-lg p-4 mb-8">
+  <div class="bg-white shadow-md rounded-lg p-4 mb-4">
     <%= turbo_frame_tag "quest_form" do %>
       <%= render "form", quest: @quest %>
     <% end %>
   </div>
 
   <!-- Quests container -->
-  <div class="space-y-4">
+  <div class="space-y-4 w-full">
     <%= turbo_frame_tag "quests" do %>
-      <div id="quests_list" class="space-y-4">
+      <div id="quests_list" class="space-y-2 sm:space-x-2 grid grid-cols-1 sm:grid-cols-2">
         <%= render @quests %>
       </div>
     <% end %>
