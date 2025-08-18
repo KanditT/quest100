@@ -103,7 +103,7 @@ end
 When('I toggle the status of quest {string}') do |quest_name|
   quest = Quest.find_by!(name: quest_name)
   find(%([data-testid="quest-check-#{quest.id}"])).click
-  sleep 0.5
+  sleep 2.5
 end
 
 Then('I wait a bit') do

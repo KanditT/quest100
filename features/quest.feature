@@ -35,7 +35,6 @@ Scenario: Create a new quest successfully
     Then I should see "Learn Ruby on Rails" in the quests list
     And the quest should have incomplete status
     And I toggle the status of quest "Learn Ruby on Rails"
-    And I wait a bit
     And the quest "Learn Ruby on Rails" should have a completed status
     When I delete the quest "Learn Ruby on Rails"
     Then I wait a bit
