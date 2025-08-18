@@ -59,9 +59,6 @@ jobs:
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
-      - name: Setup Database
-        run: |
-          bin/rails db:create db:migrate
       - name: Run RSpec unit teste
         run: |
           bundle exec rspec spec/models
@@ -70,10 +67,7 @@ jobs:
         run: |
           bundle exec rspec spec/requests
           bundle exec rspec spec/routing
-      - name: Setup Database
-        run: |
-          bin/rails db:create db:migrate
-          RAILS_ENV=cucumber bin/rails db:create db:migrate
       - name: Run Cucumber e2e tests
         run: |
-          RAILS_ENV=test bundle exec cucumber
+          bin/rails db:reset
+          bundle exec cucumber
