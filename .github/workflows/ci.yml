@@ -51,6 +51,11 @@ jobs:
         ports:
           - 5432:5432
         options: --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=3
+      # redis:
+      #   image: redis
+      #   ports:
+      #     - 6379:6379
+      #   options: --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
       - name: Install packages
         run: sudo apt-get update && sudo apt-get install --no-install-recommends -y build-essential git libpq-dev libyaml-dev pkg-config google-chrome-stable
@@ -61,46 +66,12 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
-      
-      # Clear Bootsnap cache to avoid loading issues
-      - name: Clear cache directories
-        run: |
-          rm -rf tmp/cache/bootsnap*
-          mkdir -p tmp/cache
-          mkdir -p tmp/screenshots
-      
-      # Use more reliable database setup
-      - name: Setup test database
+      - name: Run tests
         env:
           RAILS_ENV: test
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432/quest100_test
-        run: |
-          bundle exec rails db:create
-          bundle exec rails db:migrate
-      
-      # Run original Rails tests
-      - name: Run Rails tests
-        env:
-          RAILS_ENV: test
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432/quest100_test
-        run: bin/rails test test:system
-      
-      # Run RSpec tests (if you have them)
-      - name: Run RSpec tests
-        env:
-          RAILS_ENV: test
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432/quest100_test
-        run: bundle exec rspec
-        continue-on-error: true  # Allow other tests to run even if RSpec fails
-      
-      # Run Cucumber tests (if you have them)
-      - name: Run Cucumber tests
-        env:
-          RAILS_ENV: test
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432/quest100_test
-        run: bundle exec cucumber
-        continue-on-error: true  # Allow other tests to run even if Cucumber fails
-      
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432
+          # REDIS_URL: redis://localhost:6379/0
+        run: bin/rails db:test:prepare test test:system
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
         if: failure()
