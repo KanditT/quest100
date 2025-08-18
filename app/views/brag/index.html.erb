@@ -1,1 +1,82 @@
-<div>MY BRAG PAGE</div>
+<div class="container mx-auto px-4 py-8 max-w-3xl">
+  <div class="flex flex-col items-start mb-4 gap-3">
+    <%= link_to quests_path, 
+        class: "inline-flex h-10 items-center gap-3 border-2 border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-white font-medium py-2 pr-5 pl-3.5 rounded-lg transition-all duration-200",
+        data: { test_id: "back-to-quests-button" } do %>
+      <svg class="w-5 h-5 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"/>
+      </svg>
+       Back
+    <% end %>
+    <h1 class="text-3xl font-bold text-blue-950 self-center" data-test-id="brag-title">My Brag Page</h1>
+  </div>
+
+  <div class="bg-white shadow-md rounded-lg p-6 mb-4 border-2 border-sky-100" data-test-id="goal-section">
+    <div class="mb-6 text-center" data-test-id="brag-header">
+      <h2 class="text-2xl sm:text-3xl font-bold text-blue-950 mb-2">Goals & Actions 2025</h2>
+      <p class="text-sm sm:text-lg text-blue-700" data-test-id="brag-subtitle">My journey to improvement</p>
+    </div>
+    
+    <h3 class="text-xl font-bold text-blue-950 mb-4" data-test-id="goal-section-title">
+      Goals for this year (2025)
+    </h3>
+    
+    <ul class="space-y-4 text-blue-950" data-test-id="goal-list">
+      <li class="flex gap-3 p-3 rounded-lg bg-sky-50 border border-sky-100" data-test-id="goal-item-1">
+        <span class="font-bold text-blue-600 text-lg">1.</span>
+        <div>
+          <span class="font-semibold text-blue-700">Typing:</span> able to type at speed 55 wpm with accuracy 95%
+        </div>
+      </li>
+      
+      <li class="flex gap-3 p-3 rounded-lg bg-sky-50 border border-sky-100" data-test-id="goal-item-2">
+        <span class="font-bold text-blue-600 text-lg">2.</span>
+        <div>
+          <span class="font-semibold text-blue-700">English:</span> improve my English skill and achieve IELTS band 6.0 plus
+        </div>
+      </li>
+      
+      <li class="flex gap-3 p-3 rounded-lg bg-sky-50 border border-sky-100" data-test-id="goal-item-3">
+        <span class="font-bold text-blue-600 text-lg">3.</span>
+        <div>
+          <span class="font-semibold text-blue-700">Understand and able to work & apply:</span> Git and Scrum
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="bg-white shadow-md rounded-lg p-6 border-2 border-sky-100" data-test-id="action-section">
+    <h2 class="text-xl font-bold text-blue-950 mb-4" data-test-id="action-section-title">
+      Action & Contribution 🚀
+    </h2>
+    <div class="space-y-4">
+      <div class="border border-sky-100 rounded-lg p-4 bg-sky-25" data-test-id="self-actions">
+        <h3 class="font-bold text-blue-700 mb-3 text-lg">📚 Self</h3>
+        <ul class="ml-4 text-blue-950 list-disc marker:text-blue-500">
+          <li>Learn ENG from Speechful/Duolingo: at least 1 lesson per day</li>
+          <li>Learn everyday at ODT</li>
+          <li>Typing 20 mins everyday for 2 months</li>
+        </ul>
+      </div>
+      <div class="border border-sky-100 rounded-lg p-4 bg-sky-25" data-test-id="team-actions">
+        <h3 class="font-bold text-blue-700 mb-3 text-lg">👥 Team</h3>
+        <ul class="ml-4 text-blue-950 list-disc marker:text-blue-500">
+          <li>Communicate more with team</li>
+        </ul>
+      </div>
+      <div class="border border-sky-100 rounded-lg p-4 bg-sky-25" data-test-id="odt-actions">
+        <h3 class="font-bold text-blue-700 mb-3 text-lg">🏫 ODT</h3>
+        <ul class="ml-4 text-blue-950 list-disc marker:text-blue-500">
+          <li>Learning and improve at Academy ODT</li>
+        </ul>
+      </div>
+      <div class="border border-sky-100 rounded-lg p-4 bg-sky-25" data-test-id="client-actions">
+        <h3 class="font-bold text-blue-700 mb-3 text-lg">🤝 Client</h3>
+        <ul class="ml-4 text-blue-950 list-disc marker:text-blue-500">
+          <li>Working on BMA project</li>
+          <li>Working on TMLT project</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
