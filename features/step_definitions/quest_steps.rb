@@ -103,7 +103,7 @@ end
 When('I toggle the status of quest {string}') do |quest_name|
   quest = Quest.find_by!(name: quest_name)
   find(%([data-testid="quest-check-#{quest.id}"])).click
-  sleep 2.5
+  expect(page).to have_css("[data-testid='quest-name-#{quest.id}'].line-through")
 end
 
 Then('I wait a bit') do
@@ -112,7 +112,6 @@ end
 
 Then('the quest {string} should have a completed status') do |quest_name|
   quest = Quest.find_by!(name: quest_name)
-  expect(page).to have_css("[data-testid='quest-name-#{quest.id}'].line-through")
   quest.reload
   expect(quest.status).to be(true)
 end
