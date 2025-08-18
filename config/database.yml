@@ -14,7 +14,7 @@ development:
 
 test:
     <<: *default
-    database: quest100_test
+    database: quest100
 
 production:
     primary: &primary_production
