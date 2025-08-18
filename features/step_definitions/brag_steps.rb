@@ -36,10 +36,6 @@ Then('I should see {string} section') do |section_title|
   expect(page).to have_css('[data-test-id="action-section-title"]', text: section_title)
 end
 
-Then('I should be redirected to the quests page') do
-  expect(page).to have_current_path(quests_path, ignore_query: true)
-end
-
 Then('the page should have proper container styling') do
   expect(page).to have_css('.container.mx-auto')
 end

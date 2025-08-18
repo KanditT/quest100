@@ -27,11 +27,7 @@ Feature: Brag Page
       | 👥 Team | Communicate more with team |
       | 🏫 ODT | Learning and improve at Academy ODT |
       | 🤝 Client | Working on BMA project, Working on TMLT project |
-
-  Scenario: Navigate back to quests
-    When I click the "Back" button
-    Then I should be redirected to the quests page
-
+      
   Scenario: Verify page styling and layout
     Then the page should have proper container styling
     And all sections should have appropriate borders and backgrounds

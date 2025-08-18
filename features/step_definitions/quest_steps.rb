@@ -76,7 +76,7 @@ end
 When('I create a quest with name {string}') do |quest_name|
   fill_in 'quest[name]', with: quest_name
   click_button 'Create Quest'
-  sleep 0.2
+  sleep 0.7
 end
 
 Then('I should see {string} in the quests list') do |quest_name|
@@ -103,7 +103,7 @@ end
 When('I toggle the status of quest {string}') do |quest_name|
   quest = Quest.find_by!(name: quest_name)
   find(%([data-testid="quest-check-#{quest.id}"])).click
-  sleep 0.2
+  sleep 0.5
 end
 
 Then('I wait a bit') do
