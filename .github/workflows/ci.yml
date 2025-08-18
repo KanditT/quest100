@@ -69,5 +69,4 @@ jobs:
           bundle exec rspec spec/routing
       - name: Run Cucumber e2e tests
         run: |
-          bin/rails db:reset
           bundle exec cucumber
