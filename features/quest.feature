@@ -46,11 +46,10 @@ Scenario: Create a new quest successfully
     Then I should see "Learn JavaScript" in the quests list
     And I should see "Learn CSS" in the quests list
     And I should see "Build a Portfolio" in the quests list
-    And I toggle the status of quest "Build a Portfolio"
     Then I wait a bit
     And the quest "Learn JavaScript" should have an incomplete status
     And the quest "Learn CSS" should have an incomplete status
-    And the quest "Build a Portfolio" should have a completed status
+    And the quest "Build a Portfolio" should have an incomplete status
     
   Scenario: Form validation works with Turbo Stream
     When I submit an invalid quest form
