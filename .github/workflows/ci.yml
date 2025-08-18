@@ -62,7 +62,7 @@ jobs:
       - name: Setup Database
         run: |
           bin/rails db:create db:migrate
-      - name: Run RSpec unit tests
+      - name: Run RSpec unit teste
         run: |
           bundle exec rspec spec/models
           bundle exec rspec spec/views
@@ -70,6 +70,10 @@ jobs:
         run: |
           bundle exec rspec spec/requests
           bundle exec rspec spec/routing
+      - name: Setup Database
+        run: |
+          bin/rails db:create db:migrate
+          RAILS_ENV=cucumber bin/rails db:create db:migrate
       - name: Run Cucumber e2e tests
         run: |
-          bundle exec cucumber --no-database-cleaner
+          RAILS_ENV=test bundle exec cucumber
