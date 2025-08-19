@@ -68,7 +68,7 @@ group :development, :test do
 
   gem 'rubocop-capybara', require: false
   gem 'rubocop-rspec_rails', require: false
-  gem 'simplecov'
+  gem 'simplecov' # rubocop:disable Bundler/DuplicatedGem
 end
 
 group :development do
